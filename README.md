@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Requirements Angular Material
 
-This app will not run if angular material is not installed use this on command line `ng add @angular/material` to install more info `https://material.angular.io/guide/getting-started`
+This app will not run if angular material is not installed use this on command line `ng add @angular/material` to install more info [Here](https://material.angular.io/guide/getting-started)
 
 ## Code scaffolding
 
