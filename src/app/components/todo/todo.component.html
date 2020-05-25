@@ -1,0 +1,23 @@
+<mat-form-field >
+    <input matInput name="task-input" class="task-input" [formControl]="searchInput"  type="text" (keydown)="getTaskOnEnter($event, searchInput.value)">
+    <span><button mat-button (click)="getTask(searchInput.value)"> Go </button></span>
+</mat-form-field>
+
+<div class="task-list" style="width:400px;" >
+    <mat-selection-list
+    #taskList
+    [formControl]="selectMultiSearch"
+    class="custom-scroll-bar">
+        <mat-list-option
+            #matOption 
+            checkboxPosition="before" 
+            *ngFor="let task of tasks; index as i" 
+            [value]="task">
+            <div style="width: 250px" [ngClass]="matOption.selected ? 'strikethrough' : 'empty'">{{task['body']['title']}}</div>
+            <div class="actions">
+                <span class="status" [ngClass]="task['status']==200 ? 'status--green' : 'status--red'">STATUS <span>{{task['status']}}</span></span>
+                
+            </div>
+        </mat-list-option>
+    </mat-selection-list>
+</div>

@@ -1,0 +1,111 @@
+$scrollbar-width: 5px;
+$width: 200px;
+$element-height: 50px;
+
+@mixin basic-input {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: white;   
+  border : 1px solid #EAEAEA;
+  background: white;
+  z-index: 100;
+  height: $element-height;
+}
+
+/*
+ * Task List Input
+ */
+
+.task-input {
+  @include basic-input();
+  width: $width - 12px;
+  min-width:380px;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+/*
+ * Custom Task List
+ */
+
+.mat-form-field {
+  width:470px;
+  display: block;
+  border: 0px;
+  margin-bottom: -20px; 
+  margin-top: -40px;
+}
+
+.mat-list-option {
+  width: 400px; 
+  height: 50px;
+}
+
+button {
+  height: 50px;
+}
+
+.actions {
+  position: absolute; 
+  right: 0; 
+  top: 0;
+}
+
+.edit-input {
+  @include basic-input();
+  width:240px; 
+  position: absolute; 
+  top: 0; 
+  left: 0;
+}
+
+.task-list {
+  background-color: white;   
+  border : 1px solid #EAEAEA;
+  background: white;
+  padding: 0;
+  margin: 0;
+  height: 500px;
+}
+
+/*
+ * Custom Scrollbar
+ */
+
+.custom-scroll-bar::-webkit-scrollbar{
+  width: 5px;
+}
+
+.custom-scroll-bar::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,.26);
+}
+
+.custom-scroll-bar{
+  height:480px;
+  overflow-y:scroll;
+  overflow-x: hidden;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.status {
+    width: 70px;
+    height: 40px;
+    padding: 5px;
+    
+    z-index: 10;
+    text-align: center;
+    display: inline-block;
+}
+
+.status--red {
+  background-color: rgba(179, 31, 31, 0.795);
+}
+
+.status--green {
+  background-color: rgba(29, 143, 29, 0.726);
+}

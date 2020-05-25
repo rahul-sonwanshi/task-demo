@@ -1,0 +1,45 @@
+$bg-color: rgba(0, 0, 0, 1);
+$scrollbar-width: 5px;
+$width: 200px;
+$element-height: 50px;
+
+.header {
+  background-color: $bg-color;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+@mixin basic-input {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;   
+    border : 1px solid #EAEAEA;
+    background: white;
+    z-index: 100;
+    height: $element-height;
+  }
+  
+  /*
+   * Task List Input
+   */
+  
+  .task-input {
+    @include basic-input();
+    width: $width - 12px;
+    min-width:300px;
+    margin: 1.5rem auto;
+  }
+  
+  ::ng-deep .mat-form-field-underline {
+    display: none;
+  }
